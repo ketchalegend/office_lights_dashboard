@@ -1,0 +1,29 @@
+{{ form_start(form, {'attr': {'class': 'uk-width-2-3 uk-grid-small', 'uk-grid': ''}}) }}
+<div class="uk-width-1-2">
+    Username
+    {{ form_widget(form.username, {'attr': {'class': 'uk-input'}}) }}
+</div>
+<div class="uk-width-1-2">
+    Name
+    {{ form_widget(form.fullname, {'attr': {'class': 'uk-input'}}) }}
+</div>
+<div class="uk-width-1-2">
+    Password
+    {{ form_widget(form.password, {'attr': {'class': 'uk-input'}}) }}
+</div>
+<div class="uk-width-1-1">
+    Email
+    {{ form_widget(form.email, {'attr': {'class': 'uk-textarea'}}) }}
+</div>
+<div class="uk-width-1-1">
+    Profile Picture (png, jpeg)
+    {{ form_widget(form.avatar, {'attr': {'class': 'js-upload'}}) }}
+</div>
+<div class="uk-width-1-1">
+    User Roles
+    {{ form_widget(form.roles, {'attr': {'class': 'uk-textarea'}}) }}
+</div>
+<div class="uk-width-1-1 pt-3">
+    <button class="uk-button uk-button-secondary">{{ button_label|default('Speichern') }}</button>
+</div>
+{{ form_end(form) }}

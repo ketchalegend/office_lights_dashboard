@@ -1,0 +1,44 @@
+<div id="flash-messages">
+    {% for flash in app.flashes('error') %}
+        <div class="alert alert-error alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div>
+                <h4>
+                    <i class="icon fa fa-warning"></i>
+                    Hoppla!
+                </h4>
+                {{ flash.message }}
+            </div>
+        </div>
+    {% endfor %}
+    {% for flash in app.flashes('info') %}
+        <div class="alert alert-info alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div>
+                <h4>
+                    <i class="icon fa fa-info"></i>
+                    Information
+                </h4>
+                {{ flash.message }}
+            </div>
+        </div>
+    {% endfor %}
+    {% for flash in app.flashes('success') %}
+        <div class="alert alert-success alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div>
+                <h4>
+                    <i class="icon fa fa-check"></i>
+                    Großartig!
+                </h4>
+                {{ flash.message }}
+            </div>
+        </div>
+    {% endfor %}
+</div>

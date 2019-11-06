@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}m3connect | Home{% endblock %}
+{% block extraStylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/cover.css') }}"/>
+{% endblock %}
+{% block body %}
+    <div class="uk-offcanvas-content">
+        <div class="uk-flex uk-flex-center uk-flex-middle uk-height-viewport uk-position-z-index uk-position-relative"
+             data-uk-height-viewport="min-height: 400">
+            {% include('index/partials/header.html.twig') %}
+            {% include('index/partials/text.html.twig') %}
+            {% include('index/partials/footer.html.twig') %}
+        </div>
+        {% include('index/partials/offcanvas.html.twig') %}
+    </div>
+{% endblock %}
+{% block extraJavascripts %}
+    <script src="{{ asset('build/cover.js') }}"></script>
+{% endblock %}

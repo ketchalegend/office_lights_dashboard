@@ -1,0 +1,11 @@
+{% extends 'dashboard/dashboard.html.twig' %}
+
+{% block title %}Erstellen{% endblock %}
+
+{% block content %}
+    <h1>Erstellen</h1>
+
+    {{ include('site_config/_form.html.twig') }}
+    <br>
+    <a class="uk-button uk-button-text" href="{{ path('site_config_index') }}">Zurück zur Übersicht</a>
+{% endblock %}

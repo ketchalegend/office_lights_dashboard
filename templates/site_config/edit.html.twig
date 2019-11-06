@@ -1,0 +1,15 @@
+{% extends 'dashboard/dashboard.html.twig' %}
+
+{% block title %}Bearbeiten{% endblock %}
+
+{% block content %}
+    <h1>Bearbeiten</h1>
+
+    <div align="right" class="uk-width-2-3">
+        {{ include('site_config/_delete_form.html.twig') }}
+    </div>
+    {{ include('site_config/_form.html.twig', {'button_label': 'Aktualisieren'}) }}
+
+    <br>
+    <a class="uk-button uk-button-text" href="{{ path('site_config_index') }}">Zurück zur Überischt</a>
+{% endblock %}

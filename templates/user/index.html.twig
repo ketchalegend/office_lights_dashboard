@@ -1,0 +1,53 @@
+{% extends 'dashboard/dashboard.html.twig' %}
+
+{% block title %}Users{% endblock %}
+
+{% block content %}
+    <h1>Users</h1>
+    <p>Hier hast du eine Vollständige Liste aller Nutzter</p>
+
+    <table class="uk-table uk-table-justify">
+        <thead>
+        <tr>
+            <th>Username</th>
+            <th>E-Mail</th>
+            <th>IsActive</th>
+            <th>Roles</th>
+            <th>Locale</th>
+            <th>Avatar</th>
+            <th>Edit</th>
+            <th>Sperren</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            {% for role in roles %}
+            <tr>
+                <td>{{ user.username }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.isActive }}</td>
+                <td>{{ role.name }}</td>
+                <td>{{ user.locale }}</td>
+                {% if user.avatar != "" %}
+                    <td>Yes</td>
+                {% elseif user.avatar == "" %}
+                    <td>No</td>
+                {% endif %}
+                <td>
+                    <a class="uk-button uk-button-default uk-button-small my-1" href="{{ path('user_edit', {'id': user.id}) }}">Bearbeiten</a>
+                </td>
+                <td>
+                    <a class="uk-button uk-button-default uk-button-small"  href="{{ path('user_block', {'id': user.id}) }}">Sperren</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">Keine Einträge gefunden</td>
+            </tr>
+            {% endfor %}
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="uk-button uk-button-secondary" href="{{ path('user_new') }}">Neuen nutzer erstellen</a>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'dashboard/dashboard.html.twig' %}
+
+{% block title %}User Bearbeiten{% endblock %}
+
+{% block content %}
+    <h1>Bearbeiten</h1>
+
+    <div align="right" class="uk-width-2-3">
+        {{ include('user/_delete_form.html.twig') }}
+    </div>
+    {{ include('user/_form.html.twig', {'button_label': 'Aktualisieren'}) }}
+
+    <br>
+    <a class="uk-button uk-button-text" href="{{ path('user_index') }}">Zurück zur Überischt</a>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'dashboard/dashboard.html.twig' %}
+
+{% block title %}Config{% endblock %}
+
+{% block content %}
+    <h1>Config</h1>
+    <p>Hier kannst du ein paar globale Einstellungen für die Seite vornehmen.</p>
+
+    <table class="uk-table uk-table-justify">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Configkey</th>
+                <th>Wert</th>
+                <th>Aktionen</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for site_config in site_configs %}
+            <tr>
+                <td>{{ site_config.id }}</td>
+                <td>{{ site_config.configkey }}</td>
+                <td>{{ site_config.value }}</td>
+                <td>
+                    <a class="uk-button uk-button-default uk-button-small my-1" href="{{ path('site_config_show', {'id': site_config.id}) }}">Anzeigen</a>
+                    <a class="uk-button uk-button-default uk-button-small"  href="{{ path('site_config_edit', {'id': site_config.id}) }}">Bearbeiten</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">Keine Einträge gefunden</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="uk-button uk-button-secondary" href="{{ path('site_config_new') }}">Neuen Eintrag erstellen</a>
+{% endblock %}

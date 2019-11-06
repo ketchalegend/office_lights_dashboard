@@ -1,0 +1,17 @@
+{{ form_start(form, {'attr': {'class': 'uk-width-2-3 uk-grid-small', 'uk-grid': ''}}) }}
+<div class="uk-width-1-2">
+    Configkey
+    {{ form_widget(form.configkey, {'attr': {'class': 'uk-input'} } ) }}
+</div>
+<div class="uk-width-1-2">
+    Beschreibung
+    {{ form_widget(form.description, {'attr': {'class': 'uk-input'}}) }}
+</div>
+<div class="uk-width-1-1">
+    Wert
+    {{ form_widget(form.value, {'attr': {'class': 'uk-textarea'}}) }}
+</div>
+<div class="uk-width-1-1 pt-3">
+    <button class="uk-button uk-button-secondary">{{ button_label|default('Speichern') }}</button>
+</div>
+{{ form_end(form) }}
